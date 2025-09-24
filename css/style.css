@@ -52,13 +52,6 @@
   position: relative;
 }
 
-.hero{
-  position: relative;
-  min-height: clamp(42svh, 60svh, 72svh);
-  background: url("images/workout-hero.jpg") center/cover no-repeat;
-  overflow: hidden;
-}
-
 .hero img{
   width: 100%;
   height: 100%;
@@ -1235,6 +1228,7 @@ input:checked + .slider:before {
 .faq-item.active .faq-answer {
   max-height: 200px; /* adjust based on content length */
 }
+
 
 
 
