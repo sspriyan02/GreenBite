@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenBite Workouts</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🌿GreenBite</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="calculator.html">Calorie Calculator</a></li>
+      <li><a href="workout.html" class="active">Workouts</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- WORKOUT PAGE -->
+  <section class="workout-generator">
+    <div class="workout-container">
+      
+      <!-- Left Side: Form -->
+      <div class="workout-form">
+        <h2>Workout Generator</h2>
+        <label for="bodyPart">Choose Body Part:</label>
+        <select id="bodyPart">
+          <option value="">--Select--</option>
+          <option value="arms">Arms</option>
+          <option value="legs">Legs</option>
+          <option value="full-body">Full Body</option>
+          <option value="core">Core</option>
+        </select>
+
+        <label for="equipment">Choose Equipment:</label>
+        <select id="equipment">
+          <option value="">--Select--</option>
+          <option value="none">None</option>
+          <option value="dumbbells">Dumbbells</option>
+          <option value="resistance-band">Resistance Band</option>
+        </select>
+
+        <button onclick="generateWorkout()">Generate Workout</button>
+      </div>
+
+      <!-- Right Side: Generated Workouts -->
+      <div class="workout-display" id="workoutDisplay">
+        <h3>Your Workout Plan</h3>
+        <div id="workoutResult"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="calculator.html">Calorie Calculator</a></li>
+           <li><a href="workout.html">Workouts</a></li>
+          <li><a href="mindfulness.html">Mindfulness</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:someone@example.com"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+        <!-- Newsletter -->
+<div class="footer-section">
+  <h3>Subscribe</h3>
+  <form id="newsletterForm">
+    <input type="email" id="emailInput" placeholder="Enter your email" required>
+    <button type="submit">Sign Up</button>
+    <p id="newsletterMsg" class="newsletter-msg"></p>
+  </form>
+</div>
+
+    </div>
+    <p class="footer-bottom">&copy; 2025 GreenBite. All rights reserved.</p>
+  </footer>
+
+  <script src="js/workout.js"></script>
+</body>
+</html>

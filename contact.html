@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenBite — Contact Us</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🌿GreenBite</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="calculator.html">Calorie Calculator</a></li>
+      <li><a href="workout.html">Workouts</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="contact-page">
+    <header class="contact-header">
+      <h1>Contact GreenBite</h1>
+      <p>We’d love to hear from you! Fill out the form below or find us on the map.</p>
+    </header>
+
+    <section class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form card">
+        <h2>Send us a message</h2>
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+
+          <button type="submit" id="submitContact">Send Message</button>
+          <p id="contactSuccess" class="success-msg"></p>
+        </form>
+      </div>
+
+      <!-- Embedded Map -->
+      <div class="contact-map card">
+        <h2>Our Location</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.872123456789!2d80.636!3d7.293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae30f7b1f2a0d1b%3A0xabcdef123456789!2sAPIIT%20Campus%2C%20Kandy%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1695200000000!5m2!1sen!2slk"
+           width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- FAQ Accordion -->
+<section class="faq-section card">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">How can I contact GreenBite?</button>
+    <div class="faq-answer">
+      <p>You can contact us via the form above, email us at contact@greenbite.com, or call +94 81 123 4567.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Do you offer personalized meal plans?</button>
+    <div class="faq-answer">
+      <p>Yes! You can sign up for personalized meal plans tailored to your dietary needs on our Recipes page.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I schedule a workout session?</button>
+    <div class="faq-answer">
+      <p>Our Workouts page allows you to select routines and set timers for your home sessions. We currently do not offer live sessions.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="calculator.html">Calorie Calculator</a></li>
+           <li><a href="workout.html">Workouts</a></li>
+          <li><a href="mindfulness.html">Mindfulness</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:someone@example.com"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+        <!-- Newsletter -->
+<div class="footer-section">
+  <h3>Subscribe</h3>
+  <form id="newsletterForm">
+    <input type="email" id="emailInput" placeholder="Enter your email" required>
+    <button type="submit">Sign Up</button>
+    <p id="newsletterMsg" class="newsletter-msg"></p>
+  </form>
+</div>
+
+    </div>
+    <p class="footer-bottom">&copy; 2025 GreenBite. All rights reserved.</p>
+  </footer>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>

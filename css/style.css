@@ -1,0 +1,1223 @@
+/* Reset margins & padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+  
+  display: flex;
+  justify-content: space-between;  /* logo left, links right */
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #f9fcfb;  /* green shade */
+  color: #499b4c;
+}
+
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #499b4c; /* lighter green on hover */
+}
+
+/* Hero Slider */
+.hero {
+  min-height: 90vh; /* ensures section never collapses */
+  background: url('images/hero_bg.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #66bb6a;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #43a047;
+}
+
+/* Hero text animation */
+#hero-text {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s ease forwards;
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Health Tip of the Day */
+.health-tip {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f1f8f1; /* light green background */
+}
+
+.tip-card {
+  background-color: white;
+  padding: 20px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+}
+
+.tip-icon {
+  font-size: 30px;
+  color: #fdd835; /* yellowish bulb color */
+  margin-bottom: 15px;
+  display: block; /* so it’s above the text */
+}
+
+.tip-card h2 {
+  margin-bottom: 20px;
+  color: #2e7d32;
+  font-size: 28px;
+}
+
+.tip-card p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* About Us Section */
+.about-us {
+  padding: 60px 20px;
+  background-color: #f9f9f9; /* light clean background */
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap; /* responsive */
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Responsive: Stack image and text */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    margin-top: 20px;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #2d6a4f;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 250px; /* flexible width, min 250px */
+  margin: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #b7e4c7;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 15px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #b7e4c7;
+}
+
+/* Newsletter Form */
+.footer-section form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-section form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.footer-section form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2e7d32;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-section form button:hover {
+  background-color: #256428;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+}
+
+/* Newsletter Messages */
+.newsletter-msg {
+  margin-top: 8px;
+  font-size: 14px;
+  min-height: 18px; /* reserve space to prevent layout jump */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.newsletter-msg.show {
+  opacity: 1;
+}
+
+.newsletter-msg.success {
+  color: #b7e4c7; /* light green for success */
+}
+
+.newsletter-msg.error {
+  color: #f28b82; /* red for error */
+}
+
+.newsletter-msg.info {
+  color: #ffd966; /* yellow/info for already subscribed */
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin: 15px 0;
+  }
+
+  .footer-section form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-section form input,
+  .footer-section form button {
+    width: 100%;
+  }
+}
+
+/* Extra Mobile Fix: smaller screens */
+@media (max-width: 480px) {
+  .footer-section form {
+    gap: 8px;
+  }
+}
+
+
+
+
+/* ---------------- PAGE HEADER ---------------- */
+.recipes-header {
+  text-align: center;
+  padding: 50px 20px 30px;
+  background: linear-gradient(90deg, #d1f7e9 0%, #ffffff 100%);
+  border-bottom: 2px solid #27ae60;
+  border-radius: 0 0 20px 20px;
+}
+.recipes-header h1 {
+  font-size: 48px;
+  color: #27ae60;
+  margin-bottom: 12px;
+}
+.recipes-header p {
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+/* ---------------- SEARCH & FILTER ---------------- */
+.recipe-filters-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+#searchBar, #categoryFilter {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  width: 220px;
+  transition: all 0.3s;
+}
+#searchBar:focus, #categoryFilter:focus {
+  border-color: #27ae60;
+  outline: none;
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.3);
+}
+
+/* Recipes Grid */
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1200px; /* keeps it centered and not too wide */
+  padding: 0 20px;
+}
+
+/* Recipe Card Styling */
+.recipe-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.recipe-card h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #27ae60;
+}
+.recipe-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Responsive: Tablets */
+@media (max-width: 992px) {
+  .recipes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 600px) {
+  .recipes-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------------- MODAL ---------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left:0; top:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 100%;
+  padding: 20px;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-content h2 {
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+.modal-content h3 {
+  color: #27ae60;
+  margin-top: 16px;
+}
+.modal-content ul, .modal-content ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+.modal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.modal-content th, .modal-content td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.modal-content th {
+  background: #27ae60;
+  color: white;
+}
+.close {
+  position: absolute;
+  top: 12px; right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #27ae60;
+}
+
+
+/* Calorie Calculator Section */
+.calorie-calculator {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f1f8f1;
+  min-height: 80vh;
+}
+
+.calculator-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  width: 100%;
+}
+
+.calculator-container h2 {
+  font-size: 28px;
+  color: #27ae60;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.calculator-container p {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Flex layout for form + result */
+.calculator-flex {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#calorieForm {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.calorie-result {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #27ae60;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e8449;
+}
+
+/* Error messages */
+.error-message {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #e74c3c;
+}
+.error-message i {
+  margin-right: 6px;
+}
+
+/* Results Card */
+.results-card {
+  background: #fdfdfd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease;
+}
+
+.results-card h3, .results-card h4 {
+  text-align: center;
+  color: #27ae60;
+  margin-bottom: 15px;
+}
+
+/* Macro Nutrient Bars */
+.macro-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.macro-label {
+  width: 80px;
+  font-size: 14px;
+  color: #333;
+}
+
+.macro-bar-bg {
+  flex: 1;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.macro-bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 1s ease;
+  text-align: right;
+  padding-right: 5px;
+  color: white;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.macro-carbs { background-color: #f6c23e; }
+.macro-protein { background-color: #4e73df; }
+.macro-fat { background-color: #e74a3b; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .calculator-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+/* WORKOUT PAGE STYLING */
+.workout-generator {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f1f8f1;
+  min-height: 80vh;
+}
+
+.workout-container {
+  display: flex;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.workout-form {
+  flex: 1;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.workout-form h2 {
+  margin-bottom: 15px;
+  color: #27ae60;
+}
+
+.workout-form select,
+.workout-form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.workout-form button {
+  background: #27ae60;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.workout-form button:hover {
+  background: #1e8449;
+}
+
+/* Right side panel */
+.workout-display {
+  flex: 2;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.workout-display h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.workout-generator {
+  background: linear-gradient(to right, #d1f7e9, #f1f8f1);
+}
+
+/* Exercise Card */
+.exercise-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.exercise-card:hover {
+  transform: translateY(-5px);
+}
+
+.exercise-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+.exercise-info h4 {
+  margin: 0 0 5px;
+  color: #27ae60;
+  font-size: 18px;
+}
+
+.exercise-info p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Timer + buttons container */
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Circular timer */
+.timer-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #27ae60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 16px;
+}
+
+/* Timer buttons */
+.timer-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.timer-controls button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.timer-controls button:hover {
+  background: #1e8449;
+}
+@keyframes fadeInWorkout {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.exercise-card {
+  animation: fadeInWorkout 0.5s ease;
+}
+
+
+
+
+
+
+/* Mindfulness page specific */
+.mindfulness-page {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+.mindfulness-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.mindfulness-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Card base */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Spacing improvements */
+.breathing-card h2,
+.meditation-card h2 {
+  margin-bottom: 12px;
+}
+
+.breathing-card p,
+.meditation-card p {
+  margin-bottom: 15px;
+}
+
+.breath-controls,
+.meditation-controls {
+  margin-top: 20px;
+}
+
+/* Small helpers */
+.muted { color: #64748b; }
+.small { font-size: 0.9rem; }
+
+/* =========================
+   Breathing Visual
+========================= */
+.breath-visual {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0 12px;
+}
+
+/* Updated Breathing Circle for better visibility */
+.breath-circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #4ade80, #16a34a 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s ease-in-out, box-shadow 0.3s;
+  box-shadow: 0 0 20px rgba(39, 174, 96, 0.4), inset 0 4px 12px rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Breathing phases */
+.breath-grow {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(39, 174, 96, 0.6), inset 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+.breath-hold {
+  transform: scale(1.12);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
+}
+
+.breath-shrink {
+  transform: scale(0.96);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+
+/* Controls */
+.breath-controls,
+.meditation-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breath-buttons,
+.med-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 14px;
+  border: 0;
+  background: #27ae60;
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+button:hover { background: #1e8449; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+button.ghost {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+  color: #1f2937;
+}
+button.ghost:hover {
+  background: #27ae60;
+  color: #fff;
+}
+
+/* =========================
+   Styled Dropdowns with Arrow
+========================= */
+select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #f4fff7;
+  color: #166534;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23166534" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+  outline: none;
+}
+
+/* =========================
+   Meditation Display
+========================= */
+.meditation-display {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.med-clock {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e8449;
+  background: #f4fff7;
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.progress-ring {
+  position: relative;
+  display: block;
+  margin: 0 auto 10px;
+}
+.progress-ring__circle {
+  transition: stroke-dashoffset 1s linear;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.progress-ring__bg { opacity: 0.3; }
+
+/* =========================
+   Ambient Switch
+========================= */
+.ambient-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #27ae60;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* =========================
+   Session Tracker
+========================= */
+.session-tracker {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+  .mindfulness-grid { grid-template-columns: 1fr; }
+  .breath-circle { width: 150px; height: 150px; }
+}
+
+
+
+
+/* Contact Page Styles */
+.contact-page {
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-header h1 {
+  font-size: 2.2rem;
+  color: #166534;
+}
+
+.contact-header p {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.contact-form, .contact-map {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.contact-form h2, .contact-map h2 {
+  color: #1e8449;
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.contact-form button {
+  background: #27ae60;
+  color: #fff;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background: #1e8449;
+}
+
+.success-msg {
+  color: #166534;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.faq-section {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  background: #fff;
+}
+
+.faq-section h2 {
+  margin-bottom: 20px;
+  color: #166534;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  background: #e6fff1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #166534;
+  transition: background 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background: #d1f7d0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 16px;
+  margin-top: 4px;
+  background: #f4fff7;
+  border-radius: 8px;
+}
+
+.faq-answer p {
+  margin: 10px 0;
+  color: #64748b;
+}
+
+.faq-question::after {
+  content: "\f078"; /* FontAwesome chevron down */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(-180deg);
+}
+.faq-item.active .faq-answer {
+  max-height: 200px; /* adjust based on content length */
+}
+
