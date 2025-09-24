@@ -52,6 +52,15 @@
   position: relative;
 }
 
+/* Hero image  */
+.hero img{
+  width: 100%;
+  height: clamp(42svh, 60svh, 72svh); /* responsive height */
+  object-fit: cover;                  /* fill & crop nicely */
+  object-position: center;            /* keep subject centered */
+  display: block;                     /* remove inline gap */
+}
+
 .hero-content {
   background: rgba(0, 0, 0, 0.5);
   padding: 30px;
@@ -1220,4 +1229,5 @@ input:checked + .slider:before {
 .faq-item.active .faq-answer {
   max-height: 200px; /* adjust based on content length */
 }
+
 
