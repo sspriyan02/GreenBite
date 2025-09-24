@@ -52,13 +52,18 @@
   position: relative;
 }
 
-/* Hero image  */
+/* Full-bleed, responsive hero image */
+.hero{
+  height: clamp(42svh, 60svh, 72svh); /* responsive hero height */
+  overflow: hidden;                   /* hide overflow when cropping */
+}
+
 .hero img{
   width: 100%;
-  height: clamp(42svh, 60svh, 72svh); /* responsive height */
-  object-fit: cover;                  /* fill & crop nicely */
-  object-position: center;            /* keep subject centered */
-  display: block;                     /* remove inline gap */
+  height: 100%;
+  display: block;        /* remove inline-gap */
+  object-fit: cover;     /* fill & crop nicely */
+  object-position: 50% 50%; /* center the subject */
 }
 
 .hero-content {
@@ -1229,5 +1234,6 @@ input:checked + .slider:before {
 .faq-item.active .faq-answer {
   max-height: 200px; /* adjust based on content length */
 }
+
 
 
