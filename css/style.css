@@ -5,17 +5,23 @@
   box-sizing: border-box;
 }
 
+/* Media-safe elements */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Navbar styling */
 .navbar {
-  
   display: flex;
   justify-content: space-between;  /* logo left, links right */
   align-items: center;
   padding: 20px 40px;
   background-color: #f9fcfb;  /* green shade */
   color: #499b4c;
+  flex-wrap: wrap; /* allow wrapping on small screens */
 }
-
 
 .logo {
   font-size: 36px;
@@ -26,6 +32,8 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  /* prevent overflow on smaller widths */
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -67,12 +75,13 @@
 }
 
 .hero h1 {
-  font-size: 48px;
+  /* responsive typography without changing look */
+  font-size: clamp(28px, 5vw, 48px);
   margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: clamp(16px, 2.2vw, 18px);
   margin-bottom: 20px;
 }
 
@@ -173,7 +182,7 @@
 }
 
 .about-content h2 {
-  font-size: 36px;
+  font-size: clamp(24px, 4.2vw, 36px);
   color: #2e7d32;
   margin-bottom: 20px;
 }
@@ -191,7 +200,6 @@
     flex-direction: column;
     text-align: center;
   }
-
   .about-content {
     margin-top: 20px;
   }
@@ -298,21 +306,10 @@
   transition: opacity 0.4s ease;
 }
 
-.newsletter-msg.show {
-  opacity: 1;
-}
-
-.newsletter-msg.success {
-  color: #b7e4c7; /* light green for success */
-}
-
-.newsletter-msg.error {
-  color: #f28b82; /* red for error */
-}
-
-.newsletter-msg.info {
-  color: #ffd966; /* yellow/info for already subscribed */
-}
+.newsletter-msg.show { opacity: 1; }
+.newsletter-msg.success { color: #b7e4c7; }
+.newsletter-msg.error { color: #f28b82; }
+.newsletter-msg.info { color: #ffd966; }
 
 /* Responsive Mobile */
 @media (max-width: 768px) {
@@ -320,16 +317,13 @@
     flex-direction: column;
     align-items: center;
   }
-
   .footer-section {
     margin: 15px 0;
   }
-
   .footer-section form {
     flex-direction: column;
     width: 100%;
   }
-
   .footer-section form input,
   .footer-section form button {
     width: 100%;
@@ -338,13 +332,8 @@
 
 /* Extra Mobile Fix: smaller screens */
 @media (max-width: 480px) {
-  .footer-section form {
-    gap: 8px;
-  }
+  .footer-section form { gap: 8px; }
 }
-
-
-
 
 /* ---------------- PAGE HEADER ---------------- */
 .recipes-header {
@@ -355,12 +344,12 @@
   border-radius: 0 0 20px 20px;
 }
 .recipes-header h1 {
-  font-size: 48px;
+  font-size: clamp(28px, 5vw, 48px);
   color: #27ae60;
   margin-bottom: 12px;
 }
 .recipes-header p {
-  font-size: 20px;
+  font-size: clamp(16px, 2.2vw, 20px);
   color: #2c3e50;
 }
 
@@ -429,18 +418,13 @@
 
 /* Responsive: Tablets */
 @media (max-width: 992px) {
-  .recipes-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .recipes-container { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Responsive: Mobile */
 @media (max-width: 600px) {
-  .recipes-container {
-    grid-template-columns: 1fr;
-  }
+  .recipes-container { grid-template-columns: 1fr; }
 }
-
 
 /* ---------------- MODAL ---------------- */
 .modal {
@@ -464,18 +448,9 @@
   overflow-y: auto;
   position: relative;
 }
-.modal-content h2 {
-  color: #27ae60;
-  margin-bottom: 10px;
-}
-.modal-content h3 {
-  color: #27ae60;
-  margin-top: 16px;
-}
-.modal-content ul, .modal-content ol {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
+.modal-content h2 { color: #27ae60; margin-bottom: 10px; }
+.modal-content h3 { color: #27ae60; margin-top: 16px; }
+.modal-content ul, .modal-content ol { margin-left: 20px; margin-bottom: 15px; }
 .modal-content table {
   width: 100%;
   border-collapse: collapse;
@@ -486,10 +461,7 @@
   padding: 8px;
   text-align: center;
 }
-.modal-content th {
-  background: #27ae60;
-  color: white;
-}
+.modal-content th { background: #27ae60; color: white; }
 .close {
   position: absolute;
   top: 12px; right: 16px;
@@ -497,7 +469,6 @@
   cursor: pointer;
   color: #27ae60;
 }
-
 
 /* Calorie Calculator Section */
 .calorie-calculator {
@@ -539,20 +510,11 @@
   justify-content: center;
 }
 
-#calorieForm {
-  flex: 1 1 300px;
-  min-width: 280px;
-}
-
-.calorie-result {
-  flex: 1 1 300px;
-  min-width: 280px;
-}
+#calorieForm { flex: 1 1 300px; min-width: 280px; }
+.calorie-result { flex: 1 1 300px; min-width: 280px; }
 
 /* Form styles */
-.form-group {
-  margin-bottom: 15px;
-}
+.form-group { margin-bottom: 15px; }
 
 .form-group label {
   display: block;
@@ -583,9 +545,7 @@ button {
   transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #1e8449;
-}
+button:hover { background-color: #1e8449; }
 
 /* Error messages */
 .error-message {
@@ -594,9 +554,7 @@ button:hover {
   font-size: 0.9em;
   color: #e74c3c;
 }
-.error-message i {
-  margin-right: 6px;
-}
+.error-message i { margin-right: 6px; }
 
 /* Results Card */
 .results-card {
@@ -658,13 +616,8 @@ button:hover {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .calculator-flex {
-    flex-direction: column;
-    gap: 20px;
-  }
+  .calculator-flex { flex-direction: column; gap: 20px; }
 }
-
-
 
 /* WORKOUT PAGE STYLING */
 .workout-generator {
@@ -681,19 +634,17 @@ button:hover {
   margin: 40px auto;
   max-width: 1000px;
   width: 100%;
+  flex-wrap: wrap; /* prevent overflow on tablets */
 }
 
 .workout-form {
-  flex: 1;
+  flex: 1 1 320px;
   background: #f4f4f4;
   padding: 20px;
   border-radius: 10px;
 }
 
-.workout-form h2 {
-  margin-bottom: 15px;
-  color: #27ae60;
-}
+.workout-form h2 { margin-bottom: 15px; color: #27ae60; }
 
 .workout-form select,
 .workout-form button {
@@ -713,27 +664,19 @@ button:hover {
   transition: 0.3s;
 }
 
-.workout-form button:hover {
-  background: #1e8449;
-}
+.workout-form button:hover { background: #1e8449; }
 
 /* Right side panel */
 .workout-display {
-  flex: 2;
+  flex: 2 1 480px;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-.workout-display h3 {
-  margin-bottom: 15px;
-  color: #2c3e50;
-}
-
-.workout-generator {
-  background: linear-gradient(to right, #d1f7e9, #f1f8f1);
-}
+.workout-display h3 { margin-bottom: 15px; color: #2c3e50; }
+.workout-generator { background: linear-gradient(to right, #d1f7e9, #f1f8f1); }
 
 /* Exercise Card */
 .exercise-card {
@@ -749,34 +692,18 @@ button:hover {
   transition: transform 0.3s;
 }
 
-.exercise-card:hover {
-  transform: translateY(-5px);
-}
-
-.exercise-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
+.exercise-card:hover { transform: translateY(-5px); }
+.exercise-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 
 .exercise-info h4 {
   margin: 0 0 5px;
   color: #27ae60;
   font-size: 18px;
 }
-
-.exercise-info p {
-  margin: 2px 0;
-  font-size: 14px;
-  color: #555;
-}
+.exercise-info p { margin: 2px 0; font-size: 14px; color: #555; }
 
 /* Timer + buttons container */
-.timer-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.timer-wrapper { display: flex; flex-direction: column; align-items: center; }
 
 /* Circular timer */
 .timer-circle {
@@ -794,11 +721,7 @@ button:hover {
 }
 
 /* Timer buttons */
-.timer-controls {
-  display: flex;
-  gap: 5px;
-}
-
+.timer-controls { display: flex; gap: 5px; }
 .timer-controls button {
   background: #27ae60;
   color: white;
@@ -809,23 +732,13 @@ button:hover {
   transition: 0.3s;
   font-size: 14px;
 }
+.timer-controls button:hover { background: #1e8449; }
 
-.timer-controls button:hover {
-  background: #1e8449;
-}
 @keyframes fadeInWorkout {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-.exercise-card {
-  animation: fadeInWorkout 0.5s ease;
-}
-
-
-
-
-
+.exercise-card { animation: fadeInWorkout 0.5s ease; }
 
 /* Mindfulness page specific */
 .mindfulness-page {
@@ -834,10 +747,7 @@ button:hover {
   margin: 0 auto 60px;
 }
 
-.mindfulness-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
+.mindfulness-header { text-align: center; margin-bottom: 24px; }
 
 .mindfulness-grid {
   display: grid;
@@ -855,19 +765,13 @@ button:hover {
 
 /* Spacing improvements */
 .breathing-card h2,
-.meditation-card h2 {
-  margin-bottom: 12px;
-}
+.meditation-card h2 { margin-bottom: 12px; }
 
 .breathing-card p,
-.meditation-card p {
-  margin-bottom: 15px;
-}
+.meditation-card p { margin-bottom: 15px; }
 
 .breath-controls,
-.meditation-controls {
-  margin-top: 20px;
-}
+.meditation-controls { margin-top: 20px; }
 
 /* Small helpers */
 .muted { color: #64748b; }
@@ -876,11 +780,7 @@ button:hover {
 /* =========================
    Breathing Visual
 ========================= */
-.breath-visual {
-  display: flex;
-  justify-content: center;
-  margin: 18px 0 12px;
-}
+.breath-visual { display: flex; justify-content: center; margin: 18px 0 12px; }
 
 /* Updated Breathing Circle for better visibility */
 .breath-circle {
@@ -898,34 +798,16 @@ button:hover {
 }
 
 /* Breathing phases */
-.breath-grow {
-  transform: scale(1.15);
-  box-shadow: 0 0 30px rgba(39, 174, 96, 0.6), inset 0 4px 12px rgba(255, 255, 255, 0.4);
-}
-
-.breath-hold {
-  transform: scale(1.12);
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
-}
-
-.breath-shrink {
-  transform: scale(0.96);
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
-}
+.breath-grow { transform: scale(1.15); box-shadow: 0 0 30px rgba(39, 174, 96, 0.6), inset 0 4px 12px rgba(255, 255, 255, 0.4); }
+.breath-hold { transform: scale(1.12); box-shadow: 0 0 25px rgba(34, 197, 94, 0.5); }
+.breath-shrink { transform: scale(0.96); box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
 
 /* Controls */
 .breath-controls,
-.meditation-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.meditation-controls { display: flex; flex-direction: column; gap: 10px; }
 
 .breath-buttons,
-.med-buttons {
-  display: flex;
-  gap: 10px;
-}
+.med-buttons { display: flex; gap: 10px; }
 
 button {
   cursor: pointer;
@@ -945,10 +827,7 @@ button.ghost {
   padding: 6px 10px;
   color: #1f2937;
 }
-button.ghost:hover {
-  background: #27ae60;
-  color: #fff;
-}
+button.ghost:hover { background: #27ae60; color: #fff; }
 
 /* =========================
    Styled Dropdowns with Arrow
@@ -970,7 +849,6 @@ select {
   background-size: 16px;
   cursor: pointer;
 }
-
 select:focus {
   border-color: #27ae60;
   box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
@@ -980,10 +858,7 @@ select:focus {
 /* =========================
    Meditation Display
 ========================= */
-.meditation-display {
-  text-align: center;
-  margin-top: 12px;
-}
+.meditation-display { text-align: center; margin-top: 12px; }
 
 .med-clock {
   font-size: 36px;
@@ -996,11 +871,7 @@ select:focus {
   margin-bottom: 8px;
 }
 
-.progress-ring {
-  position: relative;
-  display: block;
-  margin: 0 auto 10px;
-}
+.progress-ring { position: relative; display: block; margin: 0 auto 10px; }
 .progress-ring__circle {
   transition: stroke-dashoffset 1s linear;
   transform: rotate(-90deg);
@@ -1018,18 +889,8 @@ select:focus {
   margin-top: 8px;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 26px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+.switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+.switch input { opacity: 0; width: 0; height: 0; }
 
 .slider {
   position: absolute;
@@ -1039,7 +900,6 @@ select:focus {
   transition: 0.4s;
   border-radius: 26px;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -1049,14 +909,8 @@ select:focus {
   transition: 0.4s;
   border-radius: 50%;
 }
-
-input:checked + .slider {
-  background-color: #27ae60;
-}
-
-input:checked + .slider:before {
-  transform: translateX(24px);
-}
+input:checked + .slider { background-color: #27ae60; }
+input:checked + .slider:before { transform: translateX(24px); }
 
 /* =========================
    Session Tracker
@@ -1077,9 +931,6 @@ input:checked + .slider:before {
   .breath-circle { width: 150px; height: 150px; }
 }
 
-
-
-
 /* Contact Page Styles */
 .contact-page {
   max-width: 1100px;
@@ -1087,20 +938,9 @@ input:checked + .slider:before {
   padding: 0 20px;
 }
 
-.contact-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.contact-header h1 {
-  font-size: 2.2rem;
-  color: #166534;
-}
-
-.contact-header p {
-  font-size: 1rem;
-  color: #64748b;
-}
+.contact-header { text-align: center; margin-bottom: 30px; }
+.contact-header h1 { font-size: clamp(24px, 4.2vw, 2.2rem); color: #166534; }
+.contact-header p { font-size: 1rem; color: #64748b; }
 
 .contact-grid {
   display: grid;
@@ -1115,10 +955,7 @@ input:checked + .slider:before {
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-.contact-form h2, .contact-map h2 {
-  color: #1e8449;
-  margin-bottom: 15px;
-}
+.contact-form h2, .contact-map h2 { color: #1e8449; margin-bottom: 15px; }
 
 .contact-form label {
   display: block;
@@ -1146,90 +983,30 @@ input:checked + .slider:before {
   font-weight: 500;
   transition: background 0.2s;
 }
+.contact-form button:hover { background: #1e8449; }
 
-.contact-form button:hover {
-  background: #1e8449;
-}
-
-.success-msg {
-  color: #166534;
-  margin-top: 8px;
-  font-weight: 500;
-}
+.success-msg { color: #166534; margin-top: 8px; font-weight: 500; }
 
 @media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 
-.faq-section {
-  margin-top: 40px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  background: #fff;
+/* --- Responsive fine-tuning for small screens --- */
+@media (max-width: 768px) {
+  .navbar { padding: 16px 20px; }
+  .logo { font-size: 30px; }
+  .nav-links { gap: 12px; justify-content: center; width: 100%; margin-top: 8px; }
+  .nav-links li a { font-size: 18px; }
+
+  .hero { min-height: 75vh; padding: 16px; }
+  .hero-content { padding: 20px; border-radius: 8px; }
+
+  .tip-card { padding: 18px 24px; }
 }
 
-.faq-section h2 {
-  margin-bottom: 20px;
-  color: #166534;
+@media (max-width: 480px) {
+  .logo { font-size: 26px; }
+  .nav-links { gap: 10px; }
+  .nav-links li a { font-size: 16px; }
+  .hero { min-height: 65vh; }
 }
-
-.faq-item {
-  margin-bottom: 10px;
-}
-
-.faq-question {
-  width: 100%;
-  text-align: left;
-  padding: 12px 16px;
-  background: #e6fff1;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  color: #166534;
-  transition: background 0.3s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq-question:hover {
-  background: #d1f7d0;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 16px;
-  margin-top: 4px;
-  background: #f4fff7;
-  border-radius: 8px;
-}
-
-.faq-answer p {
-  margin: 10px 0;
-  color: #64748b;
-}
-
-.faq-question::after {
-  content: "\f078"; /* FontAwesome chevron down */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  transition: transform 0.3s;
-}
-
-.faq-item.active .faq-question::after {
-  transform: rotate(-180deg);
-}
-.faq-item.active .faq-answer {
-  max-height: 200px; /* adjust based on content length */
-}
-
-
-
-
-
