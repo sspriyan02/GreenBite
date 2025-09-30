@@ -9,17 +9,25 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo">🌿GreenBite</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="recipes.html">Recipes</a></li>
-      <li><a href="calculator.html">Calorie Calculator</a></li>
-      <li><a href="workout.html">Workouts</a></li>
-      <li><a href="mindfulness.html" class="active">Mindfulness</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<nav class="navbar" role="navigation" aria-label="Main">
+  <div class="logo">🌿GreenBite</div>
+
+  <!-- Toggle button (your same icon, just with a11y attributes) -->
+  <div class="nav-toggle" role="button" tabindex="0"
+       aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul class="nav-links" id="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="recipes.html">Recipes</a></li>
+    <li><a href="calculator.html">Calorie Calculator</a></li>
+    <li><a href="workout.html">Workouts</a></li>
+    <li><a href="mindfulness.html">Mindfulness</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
 
   <main class="mindfulness-page">
     <header class="mindfulness-header">
@@ -141,3 +149,4 @@
   <script src="js/mindfulness.js"></script>
 </body>
 </html>
+
