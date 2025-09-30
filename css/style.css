@@ -1010,3 +1010,39 @@ input:checked + .slider:before { transform: translateX(24px); }
   .nav-links li a { font-size: 16px; }
   .hero { min-height: 65vh; }
 }
+
+/* --- Hamburger visibility & collapsed menu --- */
+.nav-toggle { display: none; }
+
+/* mobile/tablet */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    padding: 8px;
+    margin-left: auto; /* keeps logo left, toggle right */
+    cursor: pointer;
+  }
+  .nav-toggle:focus { outline: 2px solid #1e8449; outline-offset: 2px; }
+
+  /* collapsed menu by default */
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+
+  /* expanded state */
+  .nav-links.open { max-height: 500px; }
+
+  .nav-links li a {
+    display: block;
+    padding: 10px 2px;
+    font-size: 18px;
+  }
+}
